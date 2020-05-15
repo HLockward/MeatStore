@@ -1,0 +1,16 @@
+﻿
+<div>
+    <h1>All the meat are show here</h1>
+</div>
+
+<h2>@Model.CurrentCategory</h2>
+
+@{
+    foreach(var meat in Model.Meats)
+    {
+        <div>
+            <h4>Meat name: @meat.Name</h4>
+            <p>Price: @meat.Price.ToString("C")</p>
+        </div>
+    }
+}
