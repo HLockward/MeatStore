@@ -27,7 +27,7 @@ namespace MeatStore.Data.Mocks
                         ImageUrl = "http://imgh.us/beerL_2.jpg",
                         InStock = 10,
                         IsPreferredMeat = true,
-                        ImageThumbnailUrl = "http://imgh.us/beerS_1.jpeg"
+                        ImageThumbnailUrl = "https://d25rq8gxcq0p71.cloudfront.net/dictionary-images/324/beef%2520%2528raw%2529.jpg"
                     },
                     new Meat {
                         Name = "GroundBeef",
@@ -39,7 +39,7 @@ namespace MeatStore.Data.Mocks
                         ImageUrl = "http://imgh.us/rumCokeL.jpg",
                         InStock = 10,
                         IsPreferredMeat = false,
-                        ImageThumbnailUrl = "http://imgh.us/rumAndCokeS.jpg"
+                        ImageThumbnailUrl = "https://www.meijer.com/content/dam/meijer/product/0020/11/5500/00/0020115500000_1_A1C1_0600.png"
                     },
                     new Meat {
                         Name = "Pork belly",
@@ -50,7 +50,7 @@ namespace MeatStore.Data.Mocks
                         ImageUrl = "http://imgh.us/tequilaL.jpg",
                         InStock = 10,
                         IsPreferredMeat = false,
-                        ImageThumbnailUrl = "http://imgh.us/tequilaS.jpg"
+                        ImageThumbnailUrl = "https://www.abelandcole.co.uk/media/6615_12936_z.jpg"
                     },
                     new Meat
                     {
@@ -64,7 +64,7 @@ namespace MeatStore.Data.Mocks
                         ImageUrl = "http://imgh.us/juiceL.jpg",
                         InStock = 10,
                         IsPreferredMeat = false,
-                        ImageThumbnailUrl = "http://imgh.us/juiceS.jpg"
+                        ImageThumbnailUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS79FrJQKd2EDswF19squtc6pHe5kN2S21fUn8YctUON6EPZFqQ&usqp=CAU"
                     }
                 };
             }

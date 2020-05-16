@@ -6,8 +6,8 @@ namespace MeatStore.Data.Interfaces
 {
     public interface IMeatRepository
     {
-        IEnumerable<Meat> Meats { get; set; }
-        IEnumerable<Meat> PreferredMeats { get; set; }
+        IEnumerable<Meat> Meats { get; }
+        IEnumerable<Meat> PreferredMeats { get; }
         Meat GetMeatById(int meatId);
     }
 }

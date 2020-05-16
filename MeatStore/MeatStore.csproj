@@ -8,6 +8,14 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="bootstrap" Version="4.5.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -19,5 +27,9 @@
     <Folder Include="Views\Meat\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Shared\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\Images\" />
+    <Folder Include="wwwroot\Content\" />
+    <Folder Include="Data\Repositories\" />
   </ItemGroup>
 </Project>
