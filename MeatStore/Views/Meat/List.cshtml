@@ -4,25 +4,10 @@
 
 <h2>@Model.CurrentCategory</h2>
 <div class="row">
-    
-        
-            @{
-                foreach (var meat in Model.Meats)
-                {
-                    <div class="col col-lg-4 col-md-4 col-sm-4">
-                        <div class="card">
-                            <img class="card-img-top" src="@meat.ImageThumbnailUrl" alt="">
-                            <div class="card-body">
-                                <h3>@meat.Name</h3>
-                                <p class="card-text">@meat.ShortDescription</p>
-                            </div>
-                            <div class="card-footer">
-                                <h3 class="pull-right">@meat.Price.ToString("C")</h3>
-                            </div>
-                        </div>
-                    </div>
-                }
-            }
-        
-    
+    @{
+        foreach (Meat meat in Model.Meats)
+        {
+            @await Html.PartialAsync("MeatsSummary", meat)
+        }
+    }
 </div>
