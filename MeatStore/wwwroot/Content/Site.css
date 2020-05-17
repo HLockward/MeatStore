@@ -46,12 +46,13 @@ a.remove {
     margin-right: 10px !important
 }
 
-.carousel img {
-    min-width: 100%;
-}
-
 .card-img-top {
     width: 100%;
     height: 15vw;
     object-fit: cover;
+}
+
+slideshow.img {
+    height: 170px width:auto; /*maintain aspect ratio*/
+    max-width: 500px;
 }

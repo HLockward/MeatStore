@@ -12,7 +12,7 @@ namespace MeatStore.Data
 
         public DbSet<Meat> Meats { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<ShoppingCarItem> ShoppingCarItems { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
