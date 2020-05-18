@@ -23,5 +23,13 @@ namespace MeatStore.Data.Repositories
             .Include(c => c.Category);
 
         public Meat GetMeatById(int meatId) => _appDbContext.Meats.FirstOrDefault(m => m.MeatId == meatId);
+
+        public void RemoveMeatFromStock(int meatId, int amount)
+        {
+            var meat = _appDbContext.Meats.FirstOrDefault(m => m.MeatId == meatId);
+            meat.InStock -= amount;
+            _appDbContext.SaveChanges();
+            
+        }
     }
 }

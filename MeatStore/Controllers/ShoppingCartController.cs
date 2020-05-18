@@ -38,20 +38,20 @@ namespace MeatStore.Controllers
 
         public RedirectToActionResult AddToShoppingCart(int meatId)
         {
-            var selectedDrink = _meatRepository.Meats.FirstOrDefault(p => p.MeatId == meatId);
-            if (selectedDrink != null)
+            var selectedMeat = _meatRepository.Meats.FirstOrDefault(p => p.MeatId == meatId);
+            if (selectedMeat != null)
             {
-                _shoppingCart.AddToCart(selectedDrink, 1);
+                _shoppingCart.AddToCart(selectedMeat, 1);
             }
             return RedirectToAction("Index");
         }
 
         public RedirectToActionResult RemoveFromShoppingCart(int meatId)
         {
-            var selectedDrink = _meatRepository.Meats.FirstOrDefault(p => p.MeatId == meatId);
-            if (selectedDrink != null)
+            var selectedMeat = _meatRepository.Meats.FirstOrDefault(p => p.MeatId == meatId);
+            if (selectedMeat != null)
             {
-                _shoppingCart.RemoveFromCart(selectedDrink);
+                _shoppingCart.RemoveFromCart(selectedMeat);
             }
             return RedirectToAction("Index");
         }

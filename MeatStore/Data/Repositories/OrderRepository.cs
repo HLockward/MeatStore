@@ -8,12 +8,13 @@ namespace MeatStore.Data.Repositories
     {
         private readonly AppDbContext _appDbContext;
         private readonly ShoppingCart _shoppingCart;
+        private readonly IMeatRepository _meatRepository;
 
-
-        public OrderRepository(AppDbContext appDbContext, ShoppingCart shoppingCart)
+        public OrderRepository(AppDbContext appDbContext, ShoppingCart shoppingCart, IMeatRepository meatRepository)
         {
             _appDbContext = appDbContext;
             _shoppingCart = shoppingCart;
+            _meatRepository = meatRepository;
         }
 
 
@@ -37,6 +38,7 @@ namespace MeatStore.Data.Repositories
                 };
 
                 _appDbContext.OrderDetails.Add(orderDetail);
+                _meatRepository.RemoveMeatFromStock(shoppingCartItem.Meat.MeatId, shoppingCartItem.Amount);
             }
 
             _appDbContext.SaveChanges();

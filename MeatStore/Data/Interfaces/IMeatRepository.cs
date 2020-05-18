@@ -9,5 +9,6 @@ namespace MeatStore.Data.Interfaces
         IEnumerable<Meat> Meats { get; }
         IEnumerable<Meat> PreferredMeats { get; }
         Meat GetMeatById(int meatId);
+        void RemoveMeatFromStock(int meatId, int amount);
     }
 }

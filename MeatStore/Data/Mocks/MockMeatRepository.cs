@@ -76,6 +76,11 @@ namespace MeatStore.Data.Mocks
         {
             throw new NotImplementedException();
         }
+
+        public void RemoveMeatFromStock(int meatId, int amount)
+        {
+            throw new NotImplementedException();
+        }
     }
     
 }

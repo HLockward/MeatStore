@@ -19,11 +19,15 @@
                 <tr>
                     <td class="text-center">@line.Amount</td>
                     <td class="text-left">@line.Meat.Name</td>
-                    <td class="text-right">@line.Meat.Price.ToString("c")</td>
+                    <td class="text-right">$@line.Meat.Price.ToString("0.##")</td>
                     <td class="text-right">
-                        @((line.Amount * line.Meat.Price).ToString("c"))
+                        $@((line.Amount * line.Meat.Price).ToString("0.##"))
                     </td>
-                    <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-drinkId="@line.Meat.MeatId"></a></td>
+                    <td class="text-center">
+                        <a asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-meatId="@line.Meat.MeatId">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -31,7 +35,7 @@
             <tr>
                 <td colspan="3" class="text-right">Total:</td>
                 <td class="text-right">
-                    @Model.ShoppingCartTotal.ToString("c")
+                    $@Model.ShoppingCartTotal.ToString("0.##")
                 </td>
             </tr>
         </tfoot>
