@@ -36,8 +36,22 @@ namespace MeatStore
                 options.UseSqlServer(
                     @"Server=localhost,1433;Database=MeatStore;Persist Security Info=False;User ID=sa;Password=HLockward2018;Trusted_Connection=False;");
             });
+            //Authentication, Identity config
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+            });
+
             services.AddTransient<IMeatRepository, MeatRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));
@@ -60,7 +74,24 @@ namespace MeatStore
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseSession();
-            app.UseMvcWithDefaultRoute();
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                   name: "meatdetails",
+                   template: "Meat/Details/{meatId?}",
+                   defaults: new { Controller = "Meat", action = "Details" });
+
+                routes.MapRoute(
+                    name: "categoryfilter",
+                    template: "Meat/{action}/{category?}",
+                    defaults: new { Controller = "Meat", action = "List" });
+
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{Id?}");
+            });
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System;
 using MeatStore.Data.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MeatStore.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<IdentityUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -13,6 +15,8 @@ namespace MeatStore.Data
         public DbSet<Meat> Meats { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -279,13 +283,13 @@ namespace MeatStore.Data
                 new Category
                 {
                     CategoryId = 1,
-                    CategoryName = "Cow Meat",
+                    CategoryName = "Beef",
                     Description = "All Cow meats"
                 },
                 new Category
                 {
                     CategoryId = 2,
-                    CategoryName = "Pork Meat",
+                    CategoryName = "Pork",
                     Description = "All Pork meats"
                 }
                );

@@ -17,6 +17,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.4" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -35,5 +36,12 @@
     <Folder Include="Views\ShoppingCart\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Components\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\ShoppingCartSummary\" />
+    <Folder Include="TagHelpers\" />
+    <Folder Include="Views\Contact\" />
+    <Folder Include="Views\Shared\Components\CategoryMenu\" />
+    <Folder Include="Views\Order\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
 </Project>

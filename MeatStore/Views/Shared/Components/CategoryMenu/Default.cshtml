@@ -1,0 +1,20 @@
+﻿<li class="nav-item dropdown">
+    <a asp-controller="Meat"
+       asp-action="Index" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown link
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        @foreach (var category in Model)
+        {
+            <a asp-controller="Meat" asp-action="List"
+               asp-route-category="@category.CategoryName"
+               class="dropdown-item">
+                    @category.CategoryName
+            </a>
+        }
+
+
+        <a asp-controller="Meat" asp-action="List" asp-route-category=""
+           class="dropdown-item">View all meats</a>
+    </div>
+</li>
