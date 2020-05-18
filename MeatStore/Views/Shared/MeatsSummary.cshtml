@@ -1,17 +1,20 @@
 ﻿@model Meat
 
-<div class="col col-lg-4 col-md-4 col-sm-4">
-    <div class="card">
-        <img class="card-img-top" src="@Model.ImageThumbnailUrl" alt="">
-        <div class="card-body">
-            <h3>@Model.Name</h3>
-            <p class="card-text">@Model.ShortDescription</p>
-            <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-meatId="@Model.MeatId">
-                Add to cart
-            </a>
-        </div>
-        <div class="card-footer">
-            <h3 class="pull-right">$@Model.Price.ToString("0.##")</h3>
+@if (@Model.InStock > 0)
+{
+    <div class="col col-lg-4 col-md-4 col-sm-4">
+        <div class="card">
+            <img class="card-img-top" src="@Model.ImageThumbnailUrl" alt="">
+            <div class="card-body">
+                <h3>@Model.Name</h3>
+                <p class="card-text">@Model.ShortDescription</p>
+                <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-meatId="@Model.MeatId">
+                    Add to cart
+                </a>
+            </div>
+            <div class="card-footer">
+                <h3 class="pull-right">$@Model.Price.ToString("0.##")</h3>
+            </div>
         </div>
     </div>
-</div>
+}
